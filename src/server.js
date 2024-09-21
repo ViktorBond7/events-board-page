@@ -5,6 +5,7 @@ import cors from 'cors';
 // import notFoundtMiddleware from './middlewares/notFoundMiddleware.js';
 import { env } from './utils/env.js';
 import { getAllBorder } from './services/bords.js';
+import boardsRouter from './routers/boards.js';
 // import { getAllContacts, getContact } from './services/contacts.js';
 // import mongoose from 'mongoose';
 
@@ -22,19 +23,7 @@ const setupServer = () => {
     }),
   );
 
-  app.get('/bords', async (req, res, next) => {
-    try {
-      const bords = await getAllBorder();
-      res.status(200).json({
-        status: 200,
-        message: 'Successfully found events board!',
-        data: bords,
-      });
-    } catch (error) {
-      next(error);
-    }
-  });
-
+  app.use(boardsRouter);
   // app.use(notFoundtMiddleware);
   // app.use(errorMiddlware);
 
