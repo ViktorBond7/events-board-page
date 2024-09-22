@@ -25,4 +25,4 @@ const registrationSchema = new Schema(
   { timestamps: true, versionKey: false },
 );
 
-export const Registration = model('Registration', registrationSchema);
+export const Registration = model('registration', registrationSchema);
