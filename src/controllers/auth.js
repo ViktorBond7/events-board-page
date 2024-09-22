@@ -2,9 +2,9 @@ import { registerUser } from '../services/auth.js';
 
 export const registerForEvent = async (req, res, next) => {
   try {
-    const { fullName, email, dateOfBirth } = req.body;
+    const { fullName, email, dateOfBirth, eventId } = req.body;
 
-    if (!fullName || !email || !dateOfBirth) {
+    if (!fullName || !email || !dateOfBirth || !eventId) {
       return res.status(400).json({
         message: 'All fields are required (fullName, email, dateOfBirth)',
       });
