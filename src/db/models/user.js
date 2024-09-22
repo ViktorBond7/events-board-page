@@ -19,7 +19,7 @@ const registrationSchema = new Schema(
     eventId: {
       type: Schema.Types.ObjectId,
       ref: 'Event',
-      // required: true,
+      required: true,
     },
   },
   { timestamps: true, versionKey: false },
