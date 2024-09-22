@@ -11,6 +11,6 @@ boardsRouter.get('/bords', getAllBordersController);
 
 boardsRouter.post('/register', registerForEvent);
 
-boardsRouter.get('/users', getAllRegisteredUsersController);
+boardsRouter.get('/events/:eventId/users', getAllRegisteredUsersController);
 
 export default boardsRouter;

@@ -1,4 +1,3 @@
-import { Registration } from '../db/models/user.js';
 import { registerUser } from '../services/auth.js';
 
 export const registerForEvent = async (req, res, next) => {
@@ -7,8 +6,7 @@ export const registerForEvent = async (req, res, next) => {
 
     if (!fullName || !email || !dateOfBirth) {
       return res.status(400).json({
-        message:
-          'All fields are required (fullName, email, dateOfBirth, referral)',
+        message: 'All fields are required (fullName, email, dateOfBirth)',
       });
     }
 
@@ -19,6 +17,7 @@ export const registerForEvent = async (req, res, next) => {
       data: {
         fullName: user.fullName,
         email: user.email,
+        eventId: user.eventId,
       },
     });
   } catch (error) {

@@ -16,8 +16,13 @@ const registrationSchema = new Schema(
     referral: {
       type: String,
     },
+    eventId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Event',
+      // required: true,
+    },
   },
-  { timestamps: true },
+  { timestamps: true, versionKey: false },
 );
 
 export const Registration = model('Registration', registrationSchema);

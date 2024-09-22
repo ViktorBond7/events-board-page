@@ -17,6 +17,12 @@ export const getAllRegisteredUsersController = async (req, res, next) => {
   try {
     const users = await getAllRegisteredUsers();
 
+    if (!users.length) {
+      return res.status(404).json({
+        message: 'No users found for this event',
+      });
+    }
+
     res.status(200).json({
       message: 'Successfully fetched registered users',
       data: users,
