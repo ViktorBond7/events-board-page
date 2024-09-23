@@ -18,7 +18,7 @@ export const getAllRegisteredUsersController = async (req, res, next) => {
     const { eventId } = req.params;
     const users = await getAllRegisteredUsers(eventId);
 
-    if (!users.length) {
+    if (!users) {
       return res.status(404).json({
         message: 'No users found for this event',
       });
