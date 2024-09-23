@@ -15,7 +15,8 @@ export const getAllBordersController = async (req, res) => {
 
 export const getAllRegisteredUsersController = async (req, res, next) => {
   try {
-    const users = await getAllRegisteredUsers();
+    const { eventId } = req.params;
+    const users = await getAllRegisteredUsers(eventId);
 
     if (!users.length) {
       return res.status(404).json({
