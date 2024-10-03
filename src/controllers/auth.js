@@ -3,7 +3,6 @@ import { registerUser } from '../services/auth.js';
 export const registerForEvent = async (req, res, next) => {
   try {
     const { fullName, email, dateOfBirth, eventId } = req.body;
-    console.log('kkukukukukuku', fullName);
 
     if (!fullName || !email || !dateOfBirth || !eventId) {
       return res.status(400).json({

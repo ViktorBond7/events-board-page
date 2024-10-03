@@ -21,4 +21,4 @@ const eventSchema = new Schema(
   { timestamps: true, versionKey: false },
 );
 
-export const EventCollection = model('events-boards', eventSchema);
+export const EventCollection = model('event', eventSchema);
