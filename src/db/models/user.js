@@ -18,7 +18,7 @@ const registrationSchema = new Schema(
     },
     eventId: {
       type: Schema.Types.ObjectId,
-      ref: 'event',
+      ref: 'events-boards',
       required: true,
     },
   },
